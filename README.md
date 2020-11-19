@@ -35,7 +35,7 @@ The following **optional** features are implemented:
 
 - User can load more followers once they reach the bottom of the list using infinite loading similar to the actual Twitter client.
 - Handling UI for device orientation when viewing user followers (i.e. when in portrait it will show a list, in landscape it will be a grid view).
--  Pulling down the follower profile page should blur and resize the header background image.
+- Pulling down the follower profile page should blur and resize the header background image.
 
 The following **additional** features are implemented:
 
