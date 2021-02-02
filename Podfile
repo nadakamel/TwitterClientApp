@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '10.0'
+platform :ios, '12.0'
 
 target 'Twitter Client App' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -7,12 +7,10 @@ target 'Twitter Client App' do
 
   # Pods for Twitter Client App
   pod 'Kingfisher'
-  pod 'LFTwitterProfile'
   pod 'ObjectMapper'
   pod 'ReachabilitySwift'
-  pod 'SKActivityIndicatorView'
+  pod 'SnapKit', '~> 5.0.0'
   pod 'Swifter', :git => 'https://github.com/mattdonnelly/Swifter.git'
   pod 'Sync'
   pod 'TwitterKit'
-
 end

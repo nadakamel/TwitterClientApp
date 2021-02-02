@@ -10,7 +10,7 @@
     <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" />
   </a>
   <a href="https://github.com/3lvis/Sync#installation">
-    <img src="https://img.shields.io/badge/compatible-swift%204.0-orange.svg" />
+    <img src="https://img.shields.io/badge/compatible-swift%205.0-orange.svg" />
   </a>
 </div>
 
@@ -405,13 +405,13 @@ let dictionary = user.export(using: exportOptions)
 ### CocoaPods
 
 ```ruby
-pod 'Sync', '~> 4'
+pod 'Sync', '~> 6'
 ```
 
 ### Carthage
 
 ```ruby
-github "3lvis/Sync" ~> 4.0
+github "3lvis/Sync" ~> 6.0
 ```
 
 ### Supported iOS, OS X, watchOS and tvOS Versions
@@ -423,8 +423,9 @@ github "3lvis/Sync" ~> 4.0
 
 ## Backers
 
-Love Sync? Consider supporting further development and support by becoming a patron:
-👉  https://www.patreon.com/3lvis
+Finding Sync helpful? Consider supporting further development and support by becoming a sponsor:
+👉  https://github.com/sponsors/3lvis
+
 
 ## License
 

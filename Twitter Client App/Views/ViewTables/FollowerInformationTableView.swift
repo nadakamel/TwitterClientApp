@@ -18,7 +18,7 @@ extension FollowerInformationViewController: UITableViewDataSource {
         self.tweetTableView.dataSource = self
         self.tweetTableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         self.tweetTableView.estimatedRowHeight = 400.0
-        self.tweetTableView.rowHeight = UITableViewAutomaticDimension
+        self.tweetTableView.rowHeight = UITableView.automaticDimension
         self.tweetTableView.tableFooterView = UIView()
     }
     
@@ -36,7 +36,7 @@ extension FollowerInformationViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
 }
 

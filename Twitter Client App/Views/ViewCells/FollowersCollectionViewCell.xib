@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,13 +27,13 @@
                                     <constraint firstAttribute="width" constant="50" id="ffB-Th-M2z"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFh-as-Qle">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFh-as-Qle">
                                 <rect key="frame" x="85" y="39.5" width="400" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <color key="textColor" red="0.28235294119999998" green="0.62745098040000002" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKp-mb-u9d">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKp-mb-u9d">
                                 <rect key="frame" x="85" y="15" width="400" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <nil key="highlightedColor"/>
@@ -56,21 +54,21 @@
                             <constraint firstAttribute="trailing" secondItem="iKp-mb-u9d" secondAttribute="trailing" constant="15" id="TFr-CK-fdd"/>
                             <constraint firstItem="Akd-6o-FrC" firstAttribute="leading" secondItem="QMj-Yt-LgU" secondAttribute="trailing" constant="15" id="ZHF-SI-XWO"/>
                             <constraint firstAttribute="trailing" secondItem="cFh-as-Qle" secondAttribute="trailing" constant="15" id="aXb-RU-VQN"/>
+                            <constraint firstAttribute="bottom" secondItem="Akd-6o-FrC" secondAttribute="bottom" constant="15" id="enT-dg-niY"/>
                             <constraint firstItem="QMj-Yt-LgU" firstAttribute="top" secondItem="myd-Gk-Fw9" secondAttribute="top" constant="15" id="lRE-JZ-YWp"/>
-                            <constraint firstAttribute="bottom" secondItem="Akd-6o-FrC" secondAttribute="bottom" constant="15" id="n7e-bB-snD"/>
                             <constraint firstItem="iKp-mb-u9d" firstAttribute="leading" secondItem="QMj-Yt-LgU" secondAttribute="trailing" constant="15" id="r6e-jX-GuW"/>
                             <constraint firstAttribute="trailing" secondItem="Akd-6o-FrC" secondAttribute="trailing" constant="15" id="x3h-Hg-N6C"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
+            <viewLayoutGuide key="safeArea" id="tXA-hJ-vGq"/>
             <constraints>
                 <constraint firstItem="myd-Gk-Fw9" firstAttribute="leading" secondItem="MAw-LM-8T1" secondAttribute="leading" id="6EC-tN-5L8"/>
                 <constraint firstItem="myd-Gk-Fw9" firstAttribute="top" secondItem="MAw-LM-8T1" secondAttribute="top" id="JYb-WA-37N"/>
                 <constraint firstAttribute="trailing" secondItem="myd-Gk-Fw9" secondAttribute="trailing" id="WFG-s2-x2A"/>
                 <constraint firstAttribute="bottom" secondItem="myd-Gk-Fw9" secondAttribute="bottom" id="x6W-Bq-Qm6"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="tXA-hJ-vGq"/>
             <size key="customSize" width="500" height="56"/>
             <connections>
                 <outlet property="bioLabel" destination="Akd-6o-FrC" id="BPd-ca-ZCb"/>

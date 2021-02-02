@@ -8,28 +8,41 @@
 
 import UIKit
 import Reachability
-import SKActivityIndicatorView
+
+extension Notification.Name {
+    static let flagsChanged = Notification.Name("FlagsChanged")
+}
+
+struct Network {
+    static var reachability: Reachability!
+    enum Status: String {
+        case unreachable, wifi, wwan
+    }
+    enum Error: Swift.Error {
+        case failedToSetCallout
+        case failedToSetDispatchQueue
+        case failedToCreateWith(String)
+        case failedToInitializeWith(sockaddr_in)
+    }
+}
 
 class BaseViewController: UIViewController {
     
     var alert :UIAlertController!
+    let progressHUD = ProgressHUD(text: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    func isInternetConnectionReachable() -> Bool {
-        let reachability: Reachability
-        reachability =  Reachability()!
-        return reachability.isReachable
+        self.view.addSubview(progressHUD)
     }
     
     func loadActivityIndicator(withText text: String) {
-        SKActivityIndicator.show(text)
+        progressHUD.text = text
+        progressHUD.show()
     }
     
     func removeActivityIndicator() {
-        SKActivityIndicator.dismiss()
+        progressHUD.hide()
     }
     
     func showAlert(withTitle title: String?, message: String?){

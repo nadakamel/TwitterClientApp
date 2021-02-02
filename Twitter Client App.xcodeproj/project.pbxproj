@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,13 @@
 		89B783AA20FAA90100A8E31B /* FollowersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B783A920FAA90100A8E31B /* FollowersCollectionView.swift */; };
 		89B783AD20FAB55500A8E31B /* FollowersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89B783AC20FAB55500A8E31B /* FollowersCollectionViewCell.xib */; };
 		89B8910720FA536A00A330DA /* FollowersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B8910620FA536A00A330DA /* FollowersCollectionViewCell.swift */; };
+		89B8BD4625C9EB0600CAA104 /* TwitterProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B8BD4525C9EB0600CAA104 /* TwitterProfileViewController.swift */; };
+		89B8BD7625C9EF5700CAA104 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B8BD7125C9EF5500CAA104 /* RoundButton.swift */; };
+		89B8BD7725C9EF5700CAA104 /* TwitterProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B8BD7225C9EF5600CAA104 /* TwitterProfileHeaderView.swift */; };
+		89B8BD7825C9EF5700CAA104 /* TwitterProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89B8BD7325C9EF5600CAA104 /* TwitterProfileHeaderView.xib */; };
+		89B8BD7925C9EF5700CAA104 /* ProfileIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B8BD7425C9EF5700CAA104 /* ProfileIconView.swift */; };
+		89B8BD7A25C9EF5700CAA104 /* TouchRespondScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B8BD7525C9EF5700CAA104 /* TouchRespondScrollView.swift */; };
+		89B8BD7D25C9EFEF00CAA104 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B8BD7C25C9EFEF00CAA104 /* ProgressHUD.swift */; };
 		89EDEF3E20F44BF100D3CE3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EDEF3D20F44BF100D3CE3F /* AppDelegate.swift */; };
 		89EDEF4020F44BF100D3CE3F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EDEF3F20F44BF100D3CE3F /* LoginViewController.swift */; };
 		89EDEF4320F44BF100D3CE3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89EDEF4120F44BF100D3CE3F /* Main.storyboard */; };
@@ -42,6 +49,13 @@
 		89B783A920FAA90100A8E31B /* FollowersCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersCollectionView.swift; sourceTree = "<group>"; };
 		89B783AC20FAB55500A8E31B /* FollowersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowersCollectionViewCell.xib; sourceTree = "<group>"; };
 		89B8910620FA536A00A330DA /* FollowersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersCollectionViewCell.swift; sourceTree = "<group>"; };
+		89B8BD4525C9EB0600CAA104 /* TwitterProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterProfileViewController.swift; sourceTree = "<group>"; };
+		89B8BD7125C9EF5500CAA104 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		89B8BD7225C9EF5600CAA104 /* TwitterProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterProfileHeaderView.swift; sourceTree = "<group>"; };
+		89B8BD7325C9EF5600CAA104 /* TwitterProfileHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwitterProfileHeaderView.xib; sourceTree = "<group>"; };
+		89B8BD7425C9EF5700CAA104 /* ProfileIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileIconView.swift; sourceTree = "<group>"; };
+		89B8BD7525C9EF5700CAA104 /* TouchRespondScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchRespondScrollView.swift; sourceTree = "<group>"; };
+		89B8BD7C25C9EFEF00CAA104 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		89EDEF3A20F44BF100D3CE3F /* Twitter Client App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Twitter Client App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89EDEF3D20F44BF100D3CE3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89EDEF3F20F44BF100D3CE3F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +150,28 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		89B8BD4425C9EAF900CAA104 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				89B8BD7C25C9EFEF00CAA104 /* ProgressHUD.swift */,
+				89B8BDCC25C9FB2F00CAA104 /* TwitterProfile */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		89B8BDCC25C9FB2F00CAA104 /* TwitterProfile */ = {
+			isa = PBXGroup;
+			children = (
+				89B8BD4525C9EB0600CAA104 /* TwitterProfileViewController.swift */,
+				89B8BD7425C9EF5700CAA104 /* ProfileIconView.swift */,
+				89B8BD7125C9EF5500CAA104 /* RoundButton.swift */,
+				89B8BD7525C9EF5700CAA104 /* TouchRespondScrollView.swift */,
+				89B8BD7225C9EF5600CAA104 /* TwitterProfileHeaderView.swift */,
+				89B8BD7325C9EF5600CAA104 /* TwitterProfileHeaderView.xib */,
+			);
+			path = TwitterProfile;
+			sourceTree = "<group>";
+		};
 		89EDEF3120F44BF100D3CE3F = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +195,7 @@
 			children = (
 				89EDEF3D20F44BF100D3CE3F /* AppDelegate.swift */,
 				89B70FE620F6E3EB003846D2 /* TwitterServiceWrapper.swift */,
+				89B8BD4425C9EAF900CAA104 /* Resources */,
 				89B8910820FA5DEB00A330DA /* Models */,
 				8965366520F98ABD00B37CA5 /* Views */,
 				8938A24020F58E93003B2C45 /* Controllers */,
@@ -210,7 +247,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "Nada Kamel";
 				TargetAttributes = {
 					89EDEF3920F44BF100D3CE3F = {
@@ -244,6 +281,7 @@
 			files = (
 				89EDEF4B20F44BF200D3CE3F /* LaunchScreen.storyboard in Resources */,
 				89EDEF4820F44BF200D3CE3F /* Assets.xcassets in Resources */,
+				89B8BD7825C9EF5700CAA104 /* TwitterProfileHeaderView.xib in Resources */,
 				89EDEF4320F44BF100D3CE3F /* Main.storyboard in Resources */,
 				89B783AD20FAB55500A8E31B /* FollowersCollectionViewCell.xib in Resources */,
 			);
@@ -257,35 +295,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Twitter Client App/Pods-Twitter Client App-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/LFTwitterProfile/LFTwitterProfile.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/SKActivityIndicatorView/SKActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Swifter/Swifter.framework",
-				"${BUILT_PRODUCTS_DIR}/Sync/Sync.framework",
-				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Twitter Client App/Pods-Twitter Client App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LFTwitterProfile.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swifter.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sync.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Twitter Client App/Pods-Twitter Client App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Twitter Client App/Pods-Twitter Client App-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Twitter Client App/Pods-Twitter Client App-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A68DAAD5CE330B4AC5A56C3F /* [CP] Check Pods Manifest.lock */ = {
@@ -311,19 +330,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Twitter Client App/Pods-Twitter Client App-resources.sh",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Twitter Client App/Pods-Twitter Client App-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterShareExtensionUIResources.bundle",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Twitter Client App/Pods-Twitter Client App-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Twitter Client App/Pods-Twitter Client App-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Twitter Client App/Pods-Twitter Client App-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -334,18 +350,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				89EDEF4020F44BF100D3CE3F /* LoginViewController.swift in Sources */,
+				89B8BD7725C9EF5700CAA104 /* TwitterProfileHeaderView.swift in Sources */,
+				89B8BD7D25C9EFEF00CAA104 /* ProgressHUD.swift in Sources */,
 				89EDEF4620F44BF100D3CE3F /* Twitter_Client_App.xcdatamodeld in Sources */,
+				89B8BD4625C9EB0600CAA104 /* TwitterProfileViewController.swift in Sources */,
 				89B8910720FA536A00A330DA /* FollowersCollectionViewCell.swift in Sources */,
 				899F4C9020F59A3F005683C4 /* FollowersViewController.swift in Sources */,
 				899897EF20FFBDED00A5612C /* UIColor+NavigationBar.swift in Sources */,
+				89B8BD7625C9EF5700CAA104 /* RoundButton.swift in Sources */,
 				89B783AA20FAA90100A8E31B /* FollowersCollectionView.swift in Sources */,
 				89995DE420FC01E7000BF58A /* Tweet.swift in Sources */,
 				8938A23E20F58E4C003B2C45 /* UIImageView+Rounded.swift in Sources */,
 				899F4C8C20F5935B005683C4 /* BaseViewController.swift in Sources */,
+				89B8BD7925C9EF5700CAA104 /* ProfileIconView.swift in Sources */,
 				89EDEF3E20F44BF100D3CE3F /* AppDelegate.swift in Sources */,
 				894D61F120FC1832002227F5 /* FollowerInformationTableView.swift in Sources */,
 				89B70FE720F6E3EB003846D2 /* TwitterServiceWrapper.swift in Sources */,
 				8965366220F9861F00B37CA5 /* FollowerInformationViewController.swift in Sources */,
+				89B8BD7A25C9EF5700CAA104 /* TouchRespondScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +419,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -422,7 +445,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -457,6 +480,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -476,7 +500,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -494,7 +518,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RSUL65K5BS;
 				INFOPLIST_FILE = "Twitter Client App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -503,7 +527,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -517,7 +541,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RSUL65K5BS;
 				INFOPLIST_FILE = "Twitter Client App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -525,7 +549,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.NadaKamel.Twitter-Client-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

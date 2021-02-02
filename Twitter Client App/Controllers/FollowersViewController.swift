@@ -42,12 +42,18 @@ class FollowersViewController: BaseViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @objc func statusManager(_ notification: Notification) {
+        checkConnection()
+    }
+    
     override func viewDidLoad() {
         self.navigationController?.view.backgroundColor = navigationController?.navigationBar.barTintColor
         self.title = "Followers"
+        view.backgroundColor = collectionView.backgroundColor
         self.userHandle = self.getUserHandle()
         self.configCollectionView()
-        self.checkConnection()
+        NotificationCenter.default.addObserver(self, selector: #selector(statusManager), name: .flagsChanged, object: nil)
+        checkConnection()
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -60,7 +66,7 @@ class FollowersViewController: BaseViewController {
     }
     
     func checkConnection() {
-        if self.isInternetConnectionReachable() {
+        if Network.reachability.connection != .unavailable {
             self.loadActivityIndicator(withText: "Loading...")
             self.getFollowers(cursor: currentCursor)
         } else {
@@ -75,7 +81,7 @@ class FollowersViewController: BaseViewController {
                 self.currentCursor = next
             }, { (error) in
                 self.removeActivityIndicator()
-                if self.isInternetConnectionReachable() {
+                if Network.reachability.connection != .unavailable {
                     self.showAlert(withTitle: "Error", message: error.localizedDescription)
                 } else {
                     self.showAlert(withTitle: "No internet connection", message: error.localizedDescription)
@@ -91,7 +97,7 @@ class FollowersViewController: BaseViewController {
             self.performSegue(withIdentifier: "FollowerInfoViewSegueID", sender: nil)
         }, { (error) in
             self.removeActivityIndicator()
-            if self.isInternetConnectionReachable() {
+            if Network.reachability.connection != .unavailable {
                 self.showAlert(withTitle: "This account's Tweets are protected", message: "Only confirmed followers have access to @\(self.selectedFollower.screenName!)'s Tweets and complete profile.")
             } else {
                 self.showAlert(withTitle: "No internet connection", message: error.localizedDescription)

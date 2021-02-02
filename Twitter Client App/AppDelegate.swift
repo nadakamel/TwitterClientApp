@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import TwitterKit
+import Reachability
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,8 +21,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return twitterService
     }()
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        do {
+            try Network.reachability = Reachability(hostname: "www.google.com")
+        }
+        catch {
+            switch error as? Network.Error {
+            case let .failedToCreateWith(hostname)?:
+                print("Network error:\nFailed to create reachability object With host named:", hostname)
+            case let .failedToInitializeWith(address)?:
+                print("Network error:\nFailed to initialize reachability object With address:", address)
+            case .failedToSetCallout?:
+                print("Network error:\nFailed to set callout")
+            case .failedToSetDispatchQueue?:
+                print("Network error:\nFailed to set DispatchQueue")
+            case .none:
+                print(error)
+            }
+        }
+        
         // Twitter intialization
         TWTRTwitter.sharedInstance().start(withConsumerKey: Constants.consumerKey, consumerSecret: Constants.consumerSecret)
         
@@ -29,9 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().backgroundColor = UIColor.navigationBar
         UINavigationBar.appearance().barTintColor = UIColor.navigationBar
         UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         // Remove back button title from navigation bar
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.clear], for: .normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: .normal)
         
         // Window intialization
         self.start()
@@ -53,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = viewController
     }
 
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         print(url.absoluteString)
         return TWTRTwitter.sharedInstance().application(app, open: url, options: options)
     }

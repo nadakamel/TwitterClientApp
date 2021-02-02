@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct SwifterError: Error {
+public struct SwifterError: LocalizedError {
     
     public enum ErrorKind: CustomStringConvertible {
         case invalidAppOnlyBearerToken
@@ -17,8 +17,12 @@ public struct SwifterError: Error {
         case badOAuthResponse
         case urlResponseError(status: Int, headers: [AnyHashable: Any], errorCode: Int)
         case jsonParseError
-		case invalidGifData
-		case invalidGifResponse
+        case invalidGifData
+        case invalidGifResponse
+        case invalidMultipartMediaResponse
+        case noTwitterApp
+        case cancelled
+        case invalidClient
         
         public var description: String {
             switch self {
@@ -34,10 +38,18 @@ public struct SwifterError: Error {
                 return "urlResponseError(status: \(code), headers: \(headers), errorCode: \(errorCode)"
             case .jsonParseError:
                 return "jsonParseError"
-			case .invalidGifData:
-				return "invalidGifData"
-			case .invalidGifResponse:
-				return "invalidGifResponse"
+            case .invalidGifData:
+                return "invalidGifData"
+            case .invalidGifResponse:
+                return "invalidGifResponse"
+            case .invalidMultipartMediaResponse:
+                return "invalidMultipartMediaResponse"
+            case .noTwitterApp:
+                return "noTwitterApp"
+            case .cancelled:
+                return "cancelled"
+            case .invalidClient:
+                return "invalidClient"
             }
         }
         
@@ -46,7 +58,7 @@ public struct SwifterError: Error {
     public var message: String
     public var kind: ErrorKind
     
-    public var localizedDescription: String {
+    public var errorDescription: String? {
         return "[\(kind.description)] - \(message)"
     }
     

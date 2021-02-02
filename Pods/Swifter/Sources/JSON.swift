@@ -184,7 +184,7 @@ public enum JSON : Equatable, CustomStringConvertible {
             return "\(number)"
             
         case .string(let string):
-            return "\"\(string.replacingOccurrences(of: "\"", with: "\\\"").replacingOccurrences(of: "\r", with: "").replacingOccurrences(of: "\n", with: "\\n"))\""
+            return "\"\(string.replacingOccurrences(of: "\\", with: "\\\\").replacingOccurrences(of: "\"", with: "\\\"").replacingOccurrences(of: "\r", with: "").replacingOccurrences(of: "\n", with: "\\n"))\""
             
         case .array(let array):
             return "[\n" + array.map { "\(nextIndent)\($0.prettyPrint(indent, level + 1))" }.joined(separator: ",\n") + "\n\(currentIndent)]"
@@ -223,6 +223,9 @@ public func ==(lhs: JSON, rhs: JSON) -> Bool {
     case (.object(let lhsValue), .object(let rhsValue)):
         return lhsValue == rhsValue
         
+    case (.invalid, .invalid):
+        return true    
+        
     default:
         return false
     }
@@ -236,7 +239,7 @@ extension JSON: ExpressibleByStringLiteral,
     ExpressibleByFloatLiteral,
     ExpressibleByArrayLiteral,
     ExpressibleByDictionaryLiteral,
-    ExpressibleByNilLiteral {
+ExpressibleByNilLiteral {
     
     public init(stringLiteral value: StringLiteralType) {
         self.init(value)

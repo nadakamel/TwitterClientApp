@@ -53,7 +53,7 @@ class TwitterServiceWrapper: NSObject {
     }
     
     func getLastTweets(userID: String, count: Int, _ success:@escaping (_ response: [Tweet]) -> Void, _ failure:@escaping (_ error: Error) -> Void) {
-        swifter.getTimeline(for: userID, customParam: [:], count: count, sinceID: nil, maxID: nil, trimUser: true, excludeReplies: true, includeRetweets: false, contributorDetails: false, includeEntities: false, tweetMode: .default, success: { json in
+        swifter.getTimeline(for: .id(userID), customParam: [:], count: count, sinceID: nil, maxID: nil, trimUser: true, excludeReplies: true, includeRetweets: false, contributorDetails: false, includeEntities: false, tweetMode: .default, success: { json in
             print(json)
             var jsonArray = [[String : Any]]()
             for jsonDict in json.array! {

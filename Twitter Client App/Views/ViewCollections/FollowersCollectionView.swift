@@ -43,13 +43,13 @@ extension FollowersViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var width = view.frame.width
         if UIDevice.current.orientation.isLandscape {
-            width = (width - 50) / 2
+            width = width - 170
         }
         
-        var height: CGFloat = 60.0
+        var height: CGFloat = 40.0
         // biography
         if self.followersList[indexPath.row].biography != nil {
-            let attributedString = NSAttributedString(string: self.followersList[indexPath.row].biography!, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 15.0)])
+            let attributedString = NSAttributedString(string: self.followersList[indexPath.row].biography!, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15.0)])
             let boundingRect = attributedString.boundingRect(with: CGSize(width: width, height: CGFloat.greatestFiniteMagnitude), options: [.usesLineFragmentOrigin, .usesFontLeading], context: nil)
             height += (boundingRect.height+40.0)
         }

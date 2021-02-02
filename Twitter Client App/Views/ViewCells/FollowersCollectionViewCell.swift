@@ -17,8 +17,7 @@ class FollowersCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        self.contentView.autoresizingMask = [UIViewAutoresizing.flexibleHeight]
+        self.contentView.autoresizingMask = [UIView.AutoresizingMask.flexibleHeight]
         imgView.setRounded()
         imgView.image = UIImage(named: "profile")
         imgView.contentMode = .scaleAspectFill

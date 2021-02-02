@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import LFTwitterProfile
 
 class FollowerInformationViewController: TwitterProfileViewController {
     
@@ -27,9 +26,9 @@ class FollowerInformationViewController: TwitterProfileViewController {
         self.locationString = "@\(self.followerInfo.screenName!)"
         
         if self.followerInfo.statusesCount == 1 {
-            self.navigationDetailLabelString = "\(self.followerInfo.statusesCount) Tweet"
+            self.descriptionString = "\(self.followerInfo.statusesCount) Tweet"
         } else {
-            self.navigationDetailLabelString = "\(self.followerInfo.statusesCount) Tweets"
+            self.descriptionString = "\(self.followerInfo.statusesCount) Tweets"
         }
         
         var friendsCount = 0
@@ -95,4 +94,5 @@ class FollowerInformationViewController: TwitterProfileViewController {
     override func scrollView(forSegment index: Int) -> UIScrollView {
         return tweetTableView
     }
+    
 }

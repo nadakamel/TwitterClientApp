@@ -1,34 +1,28 @@
 PODS:
-  - Kingfisher (4.8.0)
-  - LFTwitterProfile (0.1.1):
-    - SnapKit (~> 3.0)
-  - ObjectMapper (3.2.0)
-  - ReachabilitySwift (4.1.0)
-  - SKActivityIndicatorView (0.1.0)
-  - SnapKit (3.2.0)
-  - Swifter (2.2.1)
-  - Sync (4.1.3)
-  - TwitterCore (3.1.0)
-  - TwitterKit (3.3.0):
-    - TwitterCore (>= 3.1.0)
+  - Kingfisher (6.1.0)
+  - ObjectMapper (4.2.0)
+  - ReachabilitySwift (5.0.0)
+  - SnapKit (5.0.1)
+  - Swifter (2.5.0)
+  - Sync (6.5.0)
+  - TwitterCore (3.2.0)
+  - TwitterKit (3.4.2):
+    - TwitterCore (>= 3.2.0)
 
 DEPENDENCIES:
   - Kingfisher
-  - LFTwitterProfile
   - ObjectMapper
   - ReachabilitySwift
-  - SKActivityIndicatorView
+  - SnapKit (~> 5.0.0)
   - Swifter (from `https://github.com/mattdonnelly/Swifter.git`)
   - Sync
   - TwitterKit
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Kingfisher
-    - LFTwitterProfile
     - ObjectMapper
     - ReachabilitySwift
-    - SKActivityIndicatorView
     - SnapKit
     - Sync
     - TwitterCore
@@ -40,21 +34,19 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Swifter:
-    :commit: 7ff58d6a0fd11ac004b624938117b09c1122ecdb
+    :commit: 50682ebe64e4c08f18957ccfd16888f035c20755
     :git: https://github.com/mattdonnelly/Swifter.git
 
 SPEC CHECKSUMS:
-  Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
-  LFTwitterProfile: 57cc1c1602e3b4cf297b3d80b85dff16b5257ad4
-  ObjectMapper: 5cccd2de6f253eda859df8116a5a554d9769e859
-  ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
-  SKActivityIndicatorView: f46936f760d33eb8235333242269bf01cc9248ae
-  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
-  Swifter: e52e5ad13fcbe18b57887eb3e88b7eb2681a5c45
-  Sync: 3cd2b84622c964220d7c7ba6e29823e096f1c1cf
-  TwitterCore: 644d59e75abccb26cf0a9050d2c4dea0e5412241
-  TwitterKit: a2e60ddcedbf54091eac6f27685ca7a87681e1d7
+  Kingfisher: f5d8d60a0ef3edd642fd781bae60918599901aff
+  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  Swifter: 4c2f8cf320c2f751c10128f841d8e9bd8609d988
+  Sync: 86bb8aa0ea2f955ea5ac97b7b73129f86591c39e
+  TwitterCore: 8cbc9ad34d91c63a0035ea05bfbfc0d7ca72a28c
+  TwitterKit: 5e4f41d70b9abdb41df5467f52d7aa2c0fd26ebb
 
-PODFILE CHECKSUM: c12a9222601fd9ed22cb8174dcca3b70696e3938
+PODFILE CHECKSUM: d49111011400f8e13d7d3f0d9c393c489f204af4
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.10.1
