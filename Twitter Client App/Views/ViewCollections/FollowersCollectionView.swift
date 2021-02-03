@@ -41,9 +41,9 @@ extension FollowersViewController: UICollectionViewDelegate {
 extension FollowersViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var width = view.frame.width
+        var width = collectionView.bounds.size.width
         if UIDevice.current.orientation.isLandscape {
-            width = width - 170
+            width = (floor(width / 2)) - 15
         }
         
         var height: CGFloat = 40.0
@@ -58,7 +58,7 @@ extension FollowersViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 15
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -69,7 +69,7 @@ extension FollowersViewController: UICollectionViewDelegateFlowLayout {
         if UIDevice.current.orientation.isPortrait {
             return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         } else {
-            return UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
+            return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         }
     }
 }
