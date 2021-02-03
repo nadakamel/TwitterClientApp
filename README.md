@@ -8,7 +8,6 @@ A simple Twitter client application that displays a list of user's followers. Ta
 - `Swifter` + `ObjectMapper` for networking.
 - `ReachabilitySwift` for internet connection handling.
 - `Sync` for database management.
-- `LFTwitterProfile` for having a Twitter-like profile view.
 
 ## Getting Started
 
@@ -17,8 +16,14 @@ This project uses cocoapods for dependencies management. If you don't have cocoa
 
 ### Installation
 
-Clone this repository to your machine in Xcode or using your machine's Terminal whatever you prefer.
-`git clone https://nadakamel@bitbucket.org/nadakamel/twitter-client-app.git`
+1. Clone this repository to your machine in Xcode or using your machine's Terminal whatever you prefer.
+`git clone https://github.com/nadakamel/TwitterClientApp.git`
+
+2. Download CocoaPods on your machine if you don't already have it
+`sudo gem install cocoapods`
+
+3. Install third-party libraries using `pod`
+`pod install`
 
 ### Usage
 Open  ```Twitter Client App.xcworkspace``` and run the project.
