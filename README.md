@@ -16,13 +16,13 @@ This project uses cocoapods for dependencies management. If you don't have cocoa
 
 ### Installation
 
-1. Clone this repository to your machine in Xcode or using your machine's Terminal whatever you prefer.
+1. Clone this repository to your machine in Xcode or using your machine's Terminal whatever you prefer.\
 `git clone https://github.com/nadakamel/TwitterClientApp.git`
 
-2. Download CocoaPods on your machine if you don't already have it
+2. Download CocoaPods on your machine if you don't already have it\
 `sudo gem install cocoapods`
 
-3. Install third-party libraries using `pod`
+3. Install third-party libraries using `pod`\
 `pod install`
 
 ### Usage
@@ -61,6 +61,6 @@ Views are the components that display the application's user interface (UI).
 Controllers are the components that handle user interaction, work with the model, and ultimately select a view to render that displays UI.
 
 ## Requirements
-- Xcode Version 9.4.1
-- iOS 11 or later
-- iPhone 6 or later
+- Xcode Version 12.2
+- iOS 12 or later
+- iPhone 5s or later
