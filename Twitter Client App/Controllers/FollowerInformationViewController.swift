@@ -22,8 +22,8 @@ class FollowerInformationViewController: TwitterProfileViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.username = self.followerInfo.name
-        self.locationString = "@\(self.followerInfo.screenName!)"
+        self.name = self.followerInfo.name
+        self.username = "@\(self.followerInfo.screenName!)"
         
         if self.followerInfo.statusesCount == 1 {
             self.descriptionString = "\(self.followerInfo.statusesCount) Tweet"

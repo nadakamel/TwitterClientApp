@@ -16,26 +16,21 @@ open class TwitterProfileViewController: UIViewController {
     
     
     // Constants
-    public let stickyheaderContainerViewHeight: CGFloat = 125
+    public let stickyheaderContainerViewHeight: CGFloat = 150
     
     public let bouncingThreshold: CGFloat = 100
     
     public let scrollToScaleDownProfileIconDistance: CGFloat = 60
     
-    open var profileHeaderViewHeight: CGFloat = 160 {
-        didSet {
-            //self.view.setNeedsLayout()
-            //self.view.layoutIfNeeded()
-        }
-    }
+    open var profileHeaderViewHeight: CGFloat = 160
     
     public let segmentedControlContainerHeight: CGFloat = 46
     
-    open var username: String? {
+    open var name: String? {
         didSet {
-            self.profileHeaderView?.titleLabel?.text = username
+            self.profileHeaderView?.nameLabel?.text = name
             
-            self.navigationTitleLabel?.text = username
+            self.navigationTitleLabel?.text = name
         }
     }
     
@@ -45,9 +40,9 @@ open class TwitterProfileViewController: UIViewController {
         }
     }
     
-    open var locationString: String? {
+    open var username: String? {
         didSet {
-            self.profileHeaderView?.locationLabel?.text = locationString
+            self.profileHeaderView?.usernameLabel?.text = username
         }
     }
     
@@ -107,7 +102,7 @@ open class TwitterProfileViewController: UIViewController {
         }
         self.scrollViews.removeAll()
         
-        print("[TwitterProfileViewController] memeory leak check passed")
+        print("[TwitterProfileViewController] memory leak check passed")
     }
     
     override open func viewDidLoad() {
@@ -227,19 +222,19 @@ extension TwitterProfileViewController {
         _stickyHeaderContainer.addSubview(_navigationDetailLabel)
         _navigationDetailLabel.snp.makeConstraints { (make) in
             make.centerX.equalTo(_stickyHeaderContainer.snp.centerX)
-            make.bottom.equalTo(_stickyHeaderContainer.snp.bottom).inset(8)
+            make.bottom.equalTo(_stickyHeaderContainer.snp.bottom).inset(10)
         }
         self.navigationDetailLabel = _navigationDetailLabel
         
         // Navigation Title
         let _navigationTitleLabel = UILabel()
-        _navigationTitleLabel.text = self.username ?? "{username}"
+        _navigationTitleLabel.text = self.name ?? "{name}"
         _navigationTitleLabel.textColor = UIColor.white
         _navigationTitleLabel.font = UIFont.boldSystemFont(ofSize: 17.0)
         _stickyHeaderContainer.addSubview(_navigationTitleLabel)
         _navigationTitleLabel.snp.makeConstraints { (make) in
             make.centerX.equalTo(_stickyHeaderContainer.snp.centerX)
-            make.bottom.equalTo(_navigationDetailLabel.snp.top).offset(4)
+            make.bottom.equalTo(_navigationDetailLabel.snp.top).offset(0)
         }
         self.navigationTitleLabel = _navigationTitleLabel
         
@@ -252,11 +247,10 @@ extension TwitterProfileViewController {
             _mainScrollView.addSubview(_profileHeaderView)
             self.profileHeaderView = _profileHeaderView
             
+            self.profileHeaderView.usernameLabel.text = self.name
             self.profileHeaderView.usernameLabel.text = self.username
-            self.profileHeaderView.locationLabel.text = self.locationString
             self.profileHeaderView.iconImageView.image = self.profileImage
         }
-        
         
         // Segmented Control Container
         let _segmentedControlContainer = UIView.init(frame: CGRect.init(x: 0, y: 0, width: mainScrollView.bounds.width, height: 100))
@@ -365,9 +359,11 @@ extension TwitterProfileViewController: UIScrollViewDelegate {
             baseInset.top += abs(contentOffset.y)
             self.mainScrollView.scrollIndicatorInsets = baseInset
             
-            self.mainScrollView.bringSubviewToFront(self.profileHeaderView)
-        } else {
+            self.mainScrollView.contentOffset = CGPoint(x:contentOffset.x, y:contentOffset.y+10)
             
+            self.mainScrollView.bringSubviewToFront(self.profileHeaderView)
+        }
+        else {
             // anything to be set if contentOffset.y is positive
             self.blurEffectView.alpha = 0
             self.mainScrollView.scrollIndicatorInsets = computeMainScrollViewIndicatorInsets()
@@ -405,7 +401,7 @@ extension TwitterProfileViewController: UIScrollViewDelegate {
             
             // Override
             // When scroll View reached the top edge of Title label
-            if let titleLabel = profileHeaderView.titleLabel, let usernameLabel = profileHeaderView.usernameLabel  {
+            if let titleLabel = profileHeaderView.nameLabel, let usernameLabel = profileHeaderView.usernameLabel  {
                 
                 // titleLabel location relative to self.view
                 let titleLabelLocationY = stickyheaderContainerViewHeight - 35

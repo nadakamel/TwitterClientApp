@@ -38,20 +38,14 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@roytang121" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYc-yg-iqa">
-                    <rect key="frame" x="16" y="84.5" width="73" height="14.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tokyo, Japan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssS-jj-WGA">
-                    <rect key="frame" x="16" y="107" width="85" height="17"/>
+                    <rect key="frame" x="16" y="89.5" width="85" height="17"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.61383507013320915" green="0.61383507013320915" blue="0.61383507013320915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKX-xY-4zb">
-                    <rect key="frame" x="16" y="132" width="343" height="17.5"/>
+                    <rect key="frame" x="16" y="121.5" width="343" height="17.5"/>
                     <attributedString key="attributedText">
                         <fragment content="1,994">
                             <attributes>
@@ -91,14 +85,12 @@
                 <constraint firstItem="rCq-qH-8Tq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5Gi-Iw-GwN"/>
                 <constraint firstItem="OKX-xY-4zb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="9ZO-C9-4ZH"/>
                 <constraint firstAttribute="trailing" secondItem="rCq-qH-8Tq" secondAttribute="trailing" id="IKD-Q8-GdZ"/>
-                <constraint firstItem="jYc-yg-iqa" firstAttribute="top" secondItem="g72-U6-3c5" secondAttribute="bottom" id="Pws-Ei-B0z"/>
                 <constraint firstItem="g72-U6-3c5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="UUM-OR-W06"/>
                 <constraint firstItem="rCq-qH-8Tq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WFC-Tw-xsV"/>
                 <constraint firstAttribute="trailing" secondItem="OKX-xY-4zb" secondAttribute="trailing" constant="16" id="WZd-gj-Aw1"/>
-                <constraint firstItem="jYc-yg-iqa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="iUS-ky-6sa"/>
+                <constraint firstItem="ssS-jj-WGA" firstAttribute="top" secondItem="g72-U6-3c5" secondAttribute="bottom" constant="5" id="ZMX-us-NtW"/>
                 <constraint firstItem="ssS-jj-WGA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="kEk-O7-T2Y"/>
-                <constraint firstItem="ssS-jj-WGA" firstAttribute="top" secondItem="jYc-yg-iqa" secondAttribute="bottom" constant="8" id="vPe-pp-Fu4"/>
-                <constraint firstItem="OKX-xY-4zb" firstAttribute="top" secondItem="ssS-jj-WGA" secondAttribute="bottom" constant="8" id="zzk-El-PDl"/>
+                <constraint firstItem="OKX-xY-4zb" firstAttribute="top" secondItem="ssS-jj-WGA" secondAttribute="bottom" constant="15" id="zzk-El-PDl"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -107,9 +99,8 @@
                 <outlet property="descriptionLabel" destination="OKX-xY-4zb" id="K9Q-b6-l59"/>
                 <outlet property="iconHeightConstraint" destination="Z4O-AZ-Jhy" id="yKw-en-mam"/>
                 <outlet property="iconImageView" destination="gkt-aO-Ke3" id="N4n-1o-fdq"/>
-                <outlet property="locationLabel" destination="ssS-jj-WGA" id="c84-bo-pX8"/>
-                <outlet property="titleLabel" destination="g72-U6-3c5" id="ZVA-PE-Rcm"/>
-                <outlet property="usernameLabel" destination="jYc-yg-iqa" id="Ir8-JZ-45w"/>
+                <outlet property="nameLabel" destination="g72-U6-3c5" id="ZVA-PE-Rcm"/>
+                <outlet property="usernameLabel" destination="ssS-jj-WGA" id="c84-bo-pX8"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="54"/>
         </view>

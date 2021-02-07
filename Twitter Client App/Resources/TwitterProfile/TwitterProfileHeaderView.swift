@@ -11,10 +11,9 @@ import UIKit
 
 class TwitterProfileHeaderView: UIView {
   @IBOutlet weak var iconHeightConstraint: NSLayoutConstraint!
-  @IBOutlet weak var titleLabel: UILabel!
-  @IBOutlet weak var usernameLabel: UILabel!
+  @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var iconImageView: UIImageView!
-  @IBOutlet weak var locationLabel: UILabel!
+  @IBOutlet weak var usernameLabel: UILabel!
   @IBOutlet weak var contentView: UIView!
   @IBOutlet weak var descriptionLabel: UILabel!
   
