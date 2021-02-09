@@ -31,6 +31,8 @@ class FollowersViewController: BaseViewController {
     let cellIdentifier = "CollectionViewCell"
     var currentCursor: String? = "-1"
     
+    private let refreshControl = UIRefreshControl()
+    
     lazy private var emptyCollectionView: UIView = {
         let label = UILabel(frame: self.collectionView.frame)
         label.textAlignment = .center
@@ -41,6 +43,16 @@ class FollowersViewController: BaseViewController {
     }()
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    func checkConnection() {
+        if Network.reachability.connection != .unavailable {
+            self.loadActivityIndicator(withText: "Loading...")
+            self.getFollowers(cursor: currentCursor)
+        } else {
+            self.refreshControl.endRefreshing()
+            self.followersList = RealmHelper.getRealmFollowers() ?? []
+        }
+    }
     
     @objc func statusManager(_ notification: Notification) {
         checkConnection()
@@ -61,26 +73,31 @@ class FollowersViewController: BaseViewController {
         self.collectionView.reloadData()
     }
     
-    func configCollectionView() {
-        self.collectionView.register(UINib.init(nibName: "FollowersCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
+    @objc private func refreshData(_ sender: Any) {
+        currentCursor = "-1"
+        checkConnection()
     }
     
-    func checkConnection() {
-        if Network.reachability.connection != .unavailable {
-            self.loadActivityIndicator(withText: "Loading...")
-            self.getFollowers(cursor: currentCursor)
-        } else {
-            self.followersList = RealmHelper.getRealmFollowers() ?? []
-        }
+    func configCollectionView() {
+        self.collectionView.register(UINib.init(nibName: "FollowersCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+        collectionView.addSubview(refreshControl)
     }
     
     func getFollowers(cursor: String?) {
         if cursor != "0" {
             self.twitterService.getFollowers(screenName: self.userHandle!, cursor: cursor!, count: 15, { (followers, next) in
-                self.followersList += followers
+                self.refreshControl.endRefreshing()
+                if cursor == "-1" {
+                    RealmManager.sharedInstance.deleteAllDataForObject(FollowerRealm.self)
+                    self.followersList = followers
+                } else {
+                    self.followersList += followers
+                }
                 RealmHelper.saveFollowersToRealm(followers: self.followersList)
                 self.currentCursor = next
             }, { (error) in
+                self.refreshControl.endRefreshing()
                 self.removeActivityIndicator()
                 if Network.reachability.connection != .unavailable {
                     self.showAlert(withTitle: "Error", message: error.localizedDescription)

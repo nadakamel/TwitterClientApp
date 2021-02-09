@@ -10,7 +10,6 @@ import Foundation
 
 class RealmHelper: NSObject {
     static func saveFollowersToRealm(followers: [Follower]) {
-        RealmManager.sharedInstance.deleteAllDataForObject(FollowerRealm.self)
         for follower in followers {
             let followerRealm = FollowerRealm()
             followerRealm.create(follower)
