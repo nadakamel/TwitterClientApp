@@ -25,6 +25,10 @@
 		89B8BD7925C9EF5700CAA104 /* ProfileIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B8BD7425C9EF5700CAA104 /* ProfileIconView.swift */; };
 		89B8BD7A25C9EF5700CAA104 /* TouchRespondScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B8BD7525C9EF5700CAA104 /* TouchRespondScrollView.swift */; };
 		89B8BD7D25C9EFEF00CAA104 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B8BD7C25C9EFEF00CAA104 /* ProgressHUD.swift */; };
+		89D58C3225D2D487006F9E65 /* FollowerRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D58C3125D2D487006F9E65 /* FollowerRealm.swift */; };
+		89D58C6E25D2D9B8006F9E65 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D58C6D25D2D9B8006F9E65 /* Follower.swift */; };
+		89D58C7225D2E25C006F9E65 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D58C7125D2E25C006F9E65 /* RealmManager.swift */; };
+		89D58C7525D2E64E006F9E65 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D58C7425D2E64E006F9E65 /* RealmHelper.swift */; };
 		89EDEF3E20F44BF100D3CE3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EDEF3D20F44BF100D3CE3F /* AppDelegate.swift */; };
 		89EDEF4020F44BF100D3CE3F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EDEF3F20F44BF100D3CE3F /* LoginViewController.swift */; };
 		89EDEF4320F44BF100D3CE3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89EDEF4120F44BF100D3CE3F /* Main.storyboard */; };
@@ -56,6 +60,10 @@
 		89B8BD7425C9EF5700CAA104 /* ProfileIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileIconView.swift; sourceTree = "<group>"; };
 		89B8BD7525C9EF5700CAA104 /* TouchRespondScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchRespondScrollView.swift; sourceTree = "<group>"; };
 		89B8BD7C25C9EFEF00CAA104 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		89D58C3125D2D487006F9E65 /* FollowerRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerRealm.swift; sourceTree = "<group>"; };
+		89D58C6D25D2D9B8006F9E65 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		89D58C7125D2E25C006F9E65 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		89D58C7425D2E64E006F9E65 /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		89EDEF3A20F44BF100D3CE3F /* Twitter Client App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Twitter Client App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89EDEF3D20F44BF100D3CE3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89EDEF3F20F44BF100D3CE3F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +153,8 @@
 		89B8910820FA5DEB00A330DA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				89D58C6D25D2D9B8006F9E65 /* Follower.swift */,
+				89D58C3125D2D487006F9E65 /* FollowerRealm.swift */,
 				89995DE320FC01E7000BF58A /* Tweet.swift */,
 			);
 			path = Models;
@@ -195,6 +205,8 @@
 			children = (
 				89EDEF3D20F44BF100D3CE3F /* AppDelegate.swift */,
 				89B70FE620F6E3EB003846D2 /* TwitterServiceWrapper.swift */,
+				89D58C7125D2E25C006F9E65 /* RealmManager.swift */,
+				89D58C7425D2E64E006F9E65 /* RealmHelper.swift */,
 				89B8BD4425C9EAF900CAA104 /* Resources */,
 				89B8910820FA5DEB00A330DA /* Models */,
 				8965366520F98ABD00B37CA5 /* Views */,
@@ -350,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89EDEF4020F44BF100D3CE3F /* LoginViewController.swift in Sources */,
+				89D58C6E25D2D9B8006F9E65 /* Follower.swift in Sources */,
 				89B8BD7725C9EF5700CAA104 /* TwitterProfileHeaderView.swift in Sources */,
 				89B8BD7D25C9EFEF00CAA104 /* ProgressHUD.swift in Sources */,
 				89EDEF4620F44BF100D3CE3F /* Twitter_Client_App.xcdatamodeld in Sources */,
@@ -360,6 +373,9 @@
 				89B8BD7625C9EF5700CAA104 /* RoundButton.swift in Sources */,
 				89B783AA20FAA90100A8E31B /* FollowersCollectionView.swift in Sources */,
 				89995DE420FC01E7000BF58A /* Tweet.swift in Sources */,
+				89D58C3225D2D487006F9E65 /* FollowerRealm.swift in Sources */,
+				89D58C7225D2E25C006F9E65 /* RealmManager.swift in Sources */,
+				89D58C7525D2E64E006F9E65 /* RealmHelper.swift in Sources */,
 				8938A23E20F58E4C003B2C45 /* UIImageView+Rounded.swift in Sources */,
 				899F4C8C20F5935B005683C4 /* BaseViewController.swift in Sources */,
 				89B8BD7925C9EF5700CAA104 /* ProfileIconView.swift in Sources */,

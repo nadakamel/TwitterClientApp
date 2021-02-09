@@ -30,13 +30,13 @@ class FollowersCollectionViewCell: UICollectionViewCell {
         let bio = follower.biography
         
         if imageURL != nil {
-            imgView.kf.setImage(with: URL(string:imageURL!))
+            imgView.kf.setImage(with: URL(string:imageURL))
         }
         if name != nil {
-            nameLabel.text = name!
+            nameLabel.text = name
         }
         if handle != nil {
-            handleLabel.text = "@" + handle!
+            handleLabel.text = "@" + handle
         }
         if bio != nil {
             bioLabel.text = bio

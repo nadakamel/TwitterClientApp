@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class Tweet: NSObject, Mappable {
+final class Tweet: NSObject, Mappable {
     
     var text : String?
     

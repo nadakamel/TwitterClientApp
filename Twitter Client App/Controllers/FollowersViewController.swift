@@ -70,14 +70,15 @@ class FollowersViewController: BaseViewController {
             self.loadActivityIndicator(withText: "Loading...")
             self.getFollowers(cursor: currentCursor)
         } else {
-            self.followersList = self.twitterService.fetchFollowers()
+            self.followersList = RealmHelper.getRealmFollowers() ?? []
         }
     }
     
     func getFollowers(cursor: String?) {
         if cursor != "0" {
-            self.twitterService.getFollowers(screenName: self.userHandle!, cursor: cursor!, count: 15, { (next) in
-                self.followersList += self.twitterService.fetchFollowers()
+            self.twitterService.getFollowers(screenName: self.userHandle!, cursor: cursor!, count: 15, { (followers, next) in
+                self.followersList += followers
+                RealmHelper.saveFollowersToRealm(followers: self.followersList)
                 self.currentCursor = next
             }, { (error) in
                 self.removeActivityIndicator()
@@ -91,14 +92,14 @@ class FollowersViewController: BaseViewController {
     }
     
     func getlastTweets(withCount count: Int) {
-        self.twitterService.getLastTweets(userID: self.selectedFollower.idStr!, count: count, { (tweets) in
+        self.twitterService.getLastTweets(userID: self.selectedFollower.idStr, count: count, { (tweets) in
             self.selectedFollowerTweets = tweets
             self.removeActivityIndicator()
             self.performSegue(withIdentifier: "FollowerInfoViewSegueID", sender: nil)
         }, { (error) in
             self.removeActivityIndicator()
             if Network.reachability.connection != .unavailable {
-                self.showAlert(withTitle: "This account's Tweets are protected", message: "Only confirmed followers have access to @\(self.selectedFollower.screenName!)'s Tweets and complete profile.")
+                self.showAlert(withTitle: "This account's Tweets are protected", message: "Only confirmed followers have access to @\(self.selectedFollower.screenName)'s Tweets and complete profile.")
             } else {
                 self.showAlert(withTitle: "No internet connection", message: error.localizedDescription)
             }

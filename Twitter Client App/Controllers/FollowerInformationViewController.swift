@@ -23,7 +23,7 @@ class FollowerInformationViewController: TwitterProfileViewController {
         super.viewDidLoad()
         
         self.name = self.followerInfo.name
-        self.username = "@\(self.followerInfo.screenName!)"
+        self.username = "@\(self.followerInfo.screenName)"
         
         if self.followerInfo.statusesCount == 1 {
             self.descriptionString = "\(self.followerInfo.statusesCount) Tweet"
@@ -41,8 +41,7 @@ class FollowerInformationViewController: TwitterProfileViewController {
         }
         self.descriptionString = "\(friendsCount) Following      \(followersCount) Followers"
         
-        if self.followerInfo.profileImageUrlHttps != nil {
-            let profileImageUrl = URL(string: self.followerInfo.profileImageUrlHttps!)!
+        if let profileImageUrl = URL(string: self.followerInfo.profileImageUrlHttps) {
             guard let profileImageData = try? Data(contentsOf: profileImageUrl) else {
                 self.profileImage = UIImage.init(named: "profile")
                 return
@@ -52,8 +51,7 @@ class FollowerInformationViewController: TwitterProfileViewController {
             self.profileImage = UIImage.init(named: "profile")
         }
         
-        if self.followerInfo.profileBannerUrl != nil {
-            let coverImageUrl = URL(string: self.followerInfo.profileBannerUrl!)!
+        if let coverImageUrl = URL(string: self.followerInfo.profileBannerUrlHttps) {
             guard let coverImageData = try? Data(contentsOf: coverImageUrl) else {
                 self.coverImage = UIImage.init(named: "banner")
                 return

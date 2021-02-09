@@ -9,8 +9,8 @@ target 'Twitter Client App' do
   pod 'Kingfisher'
   pod 'ObjectMapper'
   pod 'ReachabilitySwift'
+  pod 'RealmSwift'
   pod 'SnapKit', '~> 5.0.0'
   pod 'Swifter', :git => 'https://github.com/mattdonnelly/Swifter.git'
-  pod 'Sync'
   pod 'TwitterKit'
 end

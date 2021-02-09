@@ -49,7 +49,7 @@ extension FollowersViewController: UICollectionViewDelegateFlowLayout {
         var height: CGFloat = 40.0
         // biography
         if self.followersList[indexPath.row].biography != nil {
-            let attributedString = NSAttributedString(string: self.followersList[indexPath.row].biography!, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15.0)])
+            let attributedString = NSAttributedString(string: self.followersList[indexPath.row].biography, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15.0)])
             let boundingRect = attributedString.boundingRect(with: CGSize(width: width, height: CGFloat.greatestFiniteMagnitude), options: [.usesLineFragmentOrigin, .usesFontLeading], context: nil)
             height += (boundingRect.height+40.0)
         }

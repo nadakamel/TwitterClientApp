@@ -9,7 +9,7 @@
 import Foundation
 import Swifter
 import ObjectMapper
-import Sync
+//import Sync
 
 struct Constants {
     static let consumerKey = "KS0hEtzDfL1V3WI68dnRXkUYA"
@@ -19,20 +19,20 @@ struct Constants {
 
 class TwitterServiceWrapper: NSObject {
     
-    private let dataStack: DataStack
+//    private let dataStack: DataStack
     
     let swifter = Swifter(consumerKey: Constants.consumerKey, consumerSecret: Constants.consumerSecret)
     
     override init() {
-        self.dataStack = DataStack(modelName: "Twitter_Client_App")
+//        self.dataStack = DataStack(modelName: "Twitter_Client_App")
     }
     
-    func fetchFollowers() -> [Follower] {
-        let request: NSFetchRequest<Follower> = Follower.fetchRequest()
-        return try! self.dataStack.viewContext.fetch(request)
-    }
+//    func fetchFollowers() -> [Follower] {
+//        let request: NSFetchRequest<Follower> = Follower.fetchRequest()
+//        return try! self.dataStack.viewContext.fetch(request)
+//    }
     
-    func getFollowers(screenName: String, cursor: String, count: Int, _ success:@escaping (_ next: String?) -> Void, _ failure:@escaping (_ error: Error) -> Void) {
+    func getFollowers(screenName: String, cursor: String, count: Int, _ success:@escaping (_ response: [Follower], _ next: String?) -> Void, _ failure:@escaping (_ error: Error) -> Void) {
         swifter.getUserFollowers(for: .screenName(screenName), cursor: cursor, count: count, skipStatus: true, includeUserEntities: false, success: { json, prev, next in
             var jsonArray = [[String : Any]]()
             for jsonDict in json.array! {
@@ -41,12 +41,12 @@ class TwitterServiceWrapper: NSObject {
                     var str = dict!["profile_image_url_https"] as! String
                     str = str.replacingOccurrences(of: "_normal", with: "")
                     dict!["profile_image_url_https"] = str
+                    debugPrint(dict ?? [])
                     jsonArray.append(dict!)
                 }
             }
-            self.dataStack.sync(jsonArray, inEntityNamed: Follower.entity().name!) { error in
-                success(next)
-            }
+            let followers = Mapper<Follower>().mapArray(JSONArray: jsonArray)
+            success(followers, next)
         }, failure: { error in
             failure(error)
         })
