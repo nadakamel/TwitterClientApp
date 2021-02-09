@@ -7,7 +7,7 @@ A simple Twitter client application that displays a list of user's followers. Ta
 - `TwitterKit` for log in with Twitter account.
 - `Swifter` + `ObjectMapper` for networking.
 - `ReachabilitySwift` for internet connection handling.
-- `Sync` for database management.
+- `Realm` for data offline caching.
 
 ## Getting Started
 
