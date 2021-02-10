@@ -52,7 +52,7 @@ The following **additional** features are implemented:
 Model-View-Controller architecture (MVC)
 
 ### Models
-The models won't store business logic. They will only act as data stores. Model objects will retrieve and store model state in a database using Sync.
+The models won't store business logic. They will only act as data stores. Model objects will retrieve and store model state in a database using Realm.
 
 ### Views
 Views are the components that display the application's user interface (UI). 
@@ -61,6 +61,7 @@ Views are the components that display the application's user interface (UI).
 Controllers are the components that handle user interaction, work with the model, and ultimately select a view to render that displays UI.
 
 ## Requirements
+- Swift 5
 - Xcode Version 12.2
 - iOS 12 or later
 - iPhone 5s or later
