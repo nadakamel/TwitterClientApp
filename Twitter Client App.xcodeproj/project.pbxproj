@@ -95,15 +95,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		8938A23F20F58E7A003B2C45 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				8938A23D20F58E4C003B2C45 /* UIImageView+Rounded.swift */,
-				899897EE20FFBDED00A5612C /* UIColor+NavigationBar.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		8938A24020F58E93003B2C45 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +122,51 @@
 				894D61EF20FC1815002227F5 /* ViewTables */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		89736B8E25D43EE000847E6B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8938A23D20F58E4C003B2C45 /* UIImageView+Rounded.swift */,
+				899897EE20FFBDED00A5612C /* UIColor+NavigationBar.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		89736B9025D43F0B00847E6B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				89B70FE620F6E3EB003846D2 /* TwitterServiceWrapper.swift */,
+				89D58C7125D2E25C006F9E65 /* RealmManager.swift */,
+				89D58C7425D2E64E006F9E65 /* RealmHelper.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		89736B9225D43F4300847E6B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				89EDEF4120F44BF100D3CE3F /* Main.storyboard */,
+				89EDEF4920F44BF200D3CE3F /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		89736B9425D43FCC00847E6B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				89EDEF4720F44BF200D3CE3F /* Assets.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		89736B9525D4400700847E6B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				89EDEF4C20F44BF200D3CE3F /* Info.plist */,
+				89EDEF4420F44BF100D3CE3F /* Twitter_Client_App.xcdatamodeld */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		89B783A820FAA8D800A8E31B /* ViewCollections */ = {
@@ -164,12 +200,14 @@
 			isa = PBXGroup;
 			children = (
 				89B8BD7C25C9EFEF00CAA104 /* ProgressHUD.swift */,
-				89B8BDCC25C9FB2F00CAA104 /* TwitterProfile */,
+				89736B8E25D43EE000847E6B /* Extensions */,
+				89736B9425D43FCC00847E6B /* Images */,
+				89B8BDCC25C9FB2F00CAA104 /* TwitterProfileView */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		89B8BDCC25C9FB2F00CAA104 /* TwitterProfile */ = {
+		89B8BDCC25C9FB2F00CAA104 /* TwitterProfileView */ = {
 			isa = PBXGroup;
 			children = (
 				89B8BD4525C9EB0600CAA104 /* TwitterProfileViewController.swift */,
@@ -179,7 +217,7 @@
 				89B8BD7225C9EF5600CAA104 /* TwitterProfileHeaderView.swift */,
 				89B8BD7325C9EF5600CAA104 /* TwitterProfileHeaderView.xib */,
 			);
-			path = TwitterProfile;
+			path = TwitterProfileView;
 			sourceTree = "<group>";
 		};
 		89EDEF3120F44BF100D3CE3F = {
@@ -204,19 +242,13 @@
 			isa = PBXGroup;
 			children = (
 				89EDEF3D20F44BF100D3CE3F /* AppDelegate.swift */,
-				89B70FE620F6E3EB003846D2 /* TwitterServiceWrapper.swift */,
-				89D58C7125D2E25C006F9E65 /* RealmManager.swift */,
-				89D58C7425D2E64E006F9E65 /* RealmHelper.swift */,
+				89736B9025D43F0B00847E6B /* Utils */,
 				89B8BD4425C9EAF900CAA104 /* Resources */,
 				89B8910820FA5DEB00A330DA /* Models */,
 				8965366520F98ABD00B37CA5 /* Views */,
 				8938A24020F58E93003B2C45 /* Controllers */,
-				8938A23F20F58E7A003B2C45 /* Helpers */,
-				89EDEF4120F44BF100D3CE3F /* Main.storyboard */,
-				89EDEF4720F44BF200D3CE3F /* Assets.xcassets */,
-				89EDEF4920F44BF200D3CE3F /* LaunchScreen.storyboard */,
-				89EDEF4C20F44BF200D3CE3F /* Info.plist */,
-				89EDEF4420F44BF100D3CE3F /* Twitter_Client_App.xcdatamodeld */,
+				89736B9225D43F4300847E6B /* Storyboards */,
+				89736B9525D4400700847E6B /* Supporting Files */,
 			);
 			path = "Twitter Client App";
 			sourceTree = "<group>";
@@ -533,7 +565,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RSUL65K5BS;
-				INFOPLIST_FILE = "Twitter Client App/Info.plist";
+				INFOPLIST_FILE = "Twitter Client App/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -556,7 +588,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RSUL65K5BS;
-				INFOPLIST_FILE = "Twitter Client App/Info.plist";
+				INFOPLIST_FILE = "Twitter Client App/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

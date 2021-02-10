@@ -21,8 +21,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return twitterService
     }()
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    fileprivate func navigationBarSetup() {
+        UINavigationBar.appearance().backgroundColor = UIColor.navigationBar
+        UINavigationBar.appearance().barTintColor = UIColor.navigationBar
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        // Remove back button title from navigation bar
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: .normal)
+    }
+    
+    fileprivate func start() {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.makeKeyAndVisible()
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController: UIViewController
+        let defaults = UserDefaults.standard
+        if defaults.string(forKey: "user_handle") != nil {
+            viewController = mainStoryboard.instantiateViewController(withIdentifier: "FollowersViewController")
+        } else {
+            viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
+        }
+        self.window?.rootViewController = viewController
+    }
+    
+    fileprivate func reachabilitySetup() {
         do {
             try Network.reachability = Reachability(hostname: "www.google.com")
         }
@@ -40,36 +62,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(error)
             }
         }
+    }
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Network reachability
+        reachabilitySetup()
         
         // Twitter intialization
         TWTRTwitter.sharedInstance().start(withConsumerKey: Constants.consumerKey, consumerSecret: Constants.consumerSecret)
         
         // Navigation bar
-        UINavigationBar.appearance().backgroundColor = UIColor.navigationBar
-        UINavigationBar.appearance().barTintColor = UIColor.navigationBar
-        UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        // Remove back button title from navigation bar
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: .normal)
+        navigationBarSetup()
         
         // Window intialization
-        self.start()
+        start()
         
         return true
-    }
-    
-    func start() {
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.makeKeyAndVisible()
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController: UIViewController
-        let defaults = UserDefaults.standard
-        if defaults.string(forKey: "user_handle") != nil {
-            viewController = mainStoryboard.instantiateViewController(withIdentifier: "FollowersViewController")
-        } else {
-            viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
-        }
-        self.window?.rootViewController = viewController
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
